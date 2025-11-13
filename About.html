@@ -1,0 +1,269 @@
+<!DOCTYPE html>
+<html lang="zh-TW">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>關於我們 | 我的情緒，我來懂</title>
+    
+    <style>
+        /* 基礎設置 - 沿用 unit1/unit3/unit4 的樣式 */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: '微軟正黑體', Arial, sans-serif;
+        }
+
+        :root {
+            --color-primary: #79A3B1; 
+            --color-secondary: #C3E0E5; 
+            --color-text: #333333;
+            --color-white: #FFFFFF;
+            --color-accent: #E8B996; 
+            --color-background: #F9F9F9;
+        }
+
+        body {
+            background-color: var(--color-background);
+            color: var(--color-text);
+            line-height: 1.6;
+        }
+
+        /* ==== 導覽列 (HEADER) ==== */
+        header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 15px 5%;
+            background-color: var(--color-white);
+            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.05);
+        }
+
+        .logo a {
+            text-decoration: none;
+            display: inline-flex;
+            align-items: center;
+            color: var(--color-primary);
+            font-weight: bold;
+            font-size: 1.2em;
+        }
+        
+        .logo img {
+            height: 30px;
+            margin-right: 5px; 
+        }
+
+        nav ul {
+            list-style: none;
+            display: flex;
+        }
+
+        nav ul li a {
+            text-decoration: none;
+            color: var(--color-text);
+            padding: 8px 15px;
+            transition: color 0.3s;
+        }
+
+        nav ul li a:hover, nav ul li a.active {
+            color: var(--color-primary);
+            font-weight: bold;
+        }
+        
+        /* ==== 頁面主要內容區塊 (MAIN) ==== */
+        .unit-content {
+            max-width: 1000px;
+            margin: 40px auto;
+            padding: 0 5%;
+        }
+
+        .unit-header {
+            background-color: var(--color-primary);
+            color: var(--color-white);
+            padding: 40px;
+            border-radius: 8px;
+            margin-bottom: 40px;
+            text-align: center;
+        }
+
+        .unit-header h1 {
+            font-size: 2.5em;
+            margin-bottom: 10px;
+        }
+        
+        .unit-image-visual {
+            margin-bottom: 40px;
+            overflow: hidden; 
+            border-radius: 8px;
+        }
+
+        .unit-image-visual img {
+            display: block;
+            width: 50%; /* 沿用其他單元的圖片寬度 */
+            height: auto;
+            object-fit: cover;
+        }
+
+
+        /* 內容卡片樣式 */
+        .lesson-card {
+            background-color: var(--color-white);
+            padding: 30px;
+            border-radius: 8px;
+            box-shadow: 0 2px 8px rgba(0, 0, 0, 0.05);
+            margin-bottom: 30px;
+            border-left: 5px solid var(--color-accent); 
+        }
+        
+        .lesson-card h2 {
+            color: var(--color-primary);
+            margin-bottom: 15px;
+            border-bottom: 2px solid var(--color-secondary);
+            padding-bottom: 5px;
+        }
+
+        .lesson-card p {
+            margin-bottom: 15px;
+        }
+
+        /* 預設 ul 樣式 (for 💡) */
+        .lesson-card ul {
+            list-style: none;
+            padding-left: 0; 
+            margin-top: 15px;
+        }
+        
+        .lesson-card ul li {
+            position: relative;
+            margin-bottom: 10px;
+            font-size: 1.05em;
+            padding-left: 30px; /* 預留給 💡 的空間 */
+        }
+        
+        .lesson-card ul li::before {
+            content: "💡"; /* 預設圖示 */
+            position: absolute;
+            left: 0; 
+            color: var(--color-accent);
+        }
+
+        /* * 覆蓋樣式：用於自訂圖示 (💬 🚀 💖) 
+        */
+        .lesson-card ul.custom-icons li::before {
+            content: none; /* 移除預設的 💡 */
+        }
+        .lesson-card ul.custom-icons li {
+            padding-left: 0; /* 移除 💡 的內縮 */
+            display: flex; /* 讓圖示和文字對齊 */
+            align-items: flex-start;
+        }
+        .lesson-card ul.custom-icons .icon {
+            display: inline-block;
+            width: 30px; /* 給圖示一個固定寬度，使其對齊 */
+            text-align: left;
+            font-size: 1.1em; 
+            line-height: 1.6; /* 對齊文字行高 */
+        }
+        .lesson-card ul.custom-icons .icon-text {
+            flex: 1; /* 讓文字佔滿剩餘空間 */
+        }
+
+
+        /* 導向下一單元的按鈕 (保留 CSS，但在 about 頁面不使用 HTML) */
+        .next-unit-cta {
+            text-align: center;
+            margin-top: 50px;
+        }
+        
+        /* CTA 按鈕通用樣式 */
+        .cta-button {
+            display: inline-block;
+            padding: 12px 25px;
+            background-color: var(--color-accent);
+            color: var(--color-white);
+            text-decoration: none;
+            border-radius: 5px;
+            font-weight: bold;
+            transition: background-color 0.3s;
+        }
+
+        .cta-button:hover {
+            background-color: #d1a585; 
+        }
+
+        /* 頁尾 */
+        footer {
+            text-align: center;
+            padding: 20px 5%;
+            background-color: var(--color-text);
+            color: var(--color-white);
+            font-size: 0.9em;
+            margin-top: 50px;
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <div class="logo">
+            <a href="index.html">
+                <img src="1.png" alt="我的情緒，我來懂">
+                我的情緒，我來懂
+            </a>
+        </div>
+        <nav>
+            <ul>
+                <li><a href="index.html">首頁</a></li>
+                <li><a href="unit1.html">單元一：認識</a></li>
+                <li><a href="unit2.html">單元二：表達</a></li>
+                <li><a href="unit3.html">單元三：管理</a></li>
+                <li><a href="unit4.html">單元四：同理</a></li>
+                 <li class="current"><a href="about.html" class="active">關於我們</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <main class="unit-content">
+        <section class="unit-header">
+            <h1>關於我們</h1>
+            <p>致力於為青少年提供易於理解且實用的情緒智能工具。</p>
+        </section>
+        
+        <section class="unit-image-visual">
+             <img src="5.png" alt="我的圖">
+        </section>
+
+        <article class="lesson-card">
+            <h2>我們的使命 (Our Mission)</h2>
+            <p>我們相信，每個青少年都擁有管理自己情緒、理解他人並建立健康關係的潛力。我們的使命是提供一個安全、友善且科學的學習平台，透過清晰的單元與互動練習，幫助他們解鎖這份與生俱來的潛能，更有自信地航行於青春期這片時而風平浪靜、時而波濤洶湧的海洋。</p>
+        </article>
+
+        <article class="lesson-card">
+            <h2>核心理念 (Our Philosophy)</h2>
+            <ul class="custom-icons">
+                <li>
+                    <span class="icon">💬</span>
+                    <span class="icon-text"><strong>情緒是訊號，不是敵人：</strong>我們教導青少年將情緒視為寶貴的內在訊息，學習解讀它，而不是壓抑或害怕它。</span>
+                </li>
+                <li>
+                    <span class="icon">🚀</span>
+                    <span class="icon-text"><strong>學習是旅程，不是競賽：</strong>每個人的步調都不同。這個計畫鼓勵自我探索，沒有標準答案，只有更認識自己的過程。</span>
+                </li>
+                <li>
+                    <span class="icon">💖</span>
+                    <span class="icon-text"><strong>同理心是超能力：</strong>我們深信，學會同理是改善人際關係、減少衝突、建立一個更友善世界的關鍵。</span>
+                </li>
+            </ul>
+        </article>
+        
+        <article class="lesson-card">
+            <h2>聯繫我們 (Contact Us)</h2>
+            <p>我們非常樂意聽到你的回饋與建議！如果你有任何問題、合作想法，或只是想分享你的學習心得，都歡迎透過以下方式聯繫我們。</p>
+            <p class="mt-4"><strong>電子郵件：</strong>keag212103@gmail.com</p>
+        </article>
+    </main>
+
+    <footer>
+        <p>&copy; 我的情緒，我來懂 </p>
+    </footer>
+</body>
+</html>
