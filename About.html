@@ -3,10 +3,10 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>關於我們 | 我的情緒，我來懂</title>
+    <title>[你的名字] - 自我介紹 | 個人檔案</title>
     
     <style>
-        /* 基礎設置 - 沿用 unit1/unit3/unit4 的樣式 */
+        /* 基礎設置 - 沿用網站風格 */
         * {
             margin: 0;
             padding: 0;
@@ -94,13 +94,18 @@
         .unit-image-visual {
             margin-bottom: 40px;
             overflow: hidden; 
-            border-radius: 8px;
+            border-radius: 50%; /* 讓頭像看起來像圓形 */
+            width: 300px;
+            height: 300px;
+            margin-left: auto;
+            margin-right: auto;
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
         }
 
         .unit-image-visual img {
             display: block;
-            width: 50%; /* 沿用其他單元的圖片寬度 */
-            height: auto;
+            width: 100%; 
+            height: 100%;
             object-fit: cover;
         }
 
@@ -137,7 +142,7 @@
             position: relative;
             margin-bottom: 10px;
             font-size: 1.05em;
-            padding-left: 30px; /* 預留給 💡 的空間 */
+            padding-left: 30px; 
         }
         
         .lesson-card ul li::before {
@@ -147,49 +152,27 @@
             color: var(--color-accent);
         }
 
-        /* * 覆蓋樣式：用於自訂圖示 (💬 🚀 💖) 
+        /* * 覆蓋樣式：用於自訂圖示 (技能/興趣) 
         */
         .lesson-card ul.custom-icons li::before {
             content: none; /* 移除預設的 💡 */
         }
         .lesson-card ul.custom-icons li {
-            padding-left: 0; /* 移除 💡 的內縮 */
-            display: flex; /* 讓圖示和文字對齊 */
+            padding-left: 0; 
+            display: flex; 
             align-items: flex-start;
         }
         .lesson-card ul.custom-icons .icon {
             display: inline-block;
-            width: 30px; /* 給圖示一個固定寬度，使其對齊 */
+            width: 30px; 
             text-align: left;
             font-size: 1.1em; 
-            line-height: 1.6; /* 對齊文字行高 */
+            line-height: 1.6; 
         }
         .lesson-card ul.custom-icons .icon-text {
-            flex: 1; /* 讓文字佔滿剩餘空間 */
+            flex: 1; 
         }
 
-
-        /* 導向下一單元的按鈕 (保留 CSS，但在 about 頁面不使用 HTML) */
-        .next-unit-cta {
-            text-align: center;
-            margin-top: 50px;
-        }
-        
-        /* CTA 按鈕通用樣式 */
-        .cta-button {
-            display: inline-block;
-            padding: 12px 25px;
-            background-color: var(--color-accent);
-            color: var(--color-white);
-            text-decoration: none;
-            border-radius: 5px;
-            font-weight: bold;
-            transition: background-color 0.3s;
-        }
-
-        .cta-button:hover {
-            background-color: #d1a585; 
-        }
 
         /* 頁尾 */
         footer {
@@ -207,7 +190,7 @@
         <div class="logo">
             <a href="index.html">
                 <img src="1.png" alt="我的情緒，我來懂">
-                我的情緒，我來懂
+                情緒教育網站
             </a>
         </div>
         <nav>
@@ -217,53 +200,61 @@
                 <li><a href="unit2.html">單元二：表達</a></li>
                 <li><a href="unit3.html">單元三：管理</a></li>
                 <li><a href="unit4.html">單元四：同理</a></li>
-                 <li class="current"><a href="about.html" class="active">關於我們</a></li>
+                 <li class="current"><a href="introduction.html" class="active">自我介紹</a></li>
             </ul>
         </nav>
     </header>
 
     <main class="unit-content">
         <section class="unit-header">
-            <h1>關於我們</h1>
-            <p>致力於為青少年提供易於理解且實用的情緒智能工具。</p>
+            <h1>[你的名字] - 個人檔案</h1>
+            <p>一位專注於情緒智能教育和網頁開發的學習者。</p>
         </section>
         
         <section class="unit-image-visual">
-             <img src="5.png" alt="我的圖">
+             <img src="20.png" alt="個人頭像照片">
         </section>
 
         <article class="lesson-card">
-            <h2>我們的使命 (Our Mission)</h2>
-            <p>我們相信，每個青少年都擁有管理自己情緒、理解他人並建立健康關係的潛力。我們的使命是提供一個安全、友善且科學的學習平台，透過清晰的單元與互動練習，幫助他們解鎖這份與生俱來的潛能，更有自信地航行於青春期這片時而風平浪靜、時而波濤洶湧的海洋。</p>
+            <h2>個人概述 (Personal Overview)</h2>
+            <p>我熱衷於研究和推廣情緒智能（EQ）對個人成長的重要性。我相信透過清晰、結構化的學習方式，任何人都能掌握管理情緒和建立深度連結的能力。在專業方面，我主要負責前端網頁開發與內容設計，並致力於打造用戶友善的數位學習平台。</p>
+            <p><strong>個性關鍵詞：</strong> 條理分明、樂觀積極、持續學習。</p>
         </article>
 
         <article class="lesson-card">
-            <h2>核心理念 (Our Philosophy)</h2>
+            <h2>核心技能與興趣 (Skills & Interests)</h2>
             <ul class="custom-icons">
                 <li>
-                    <span class="icon">💬</span>
-                    <span class="icon-text"><strong>情緒是訊號，不是敵人：</strong>我們教導青少年將情緒視為寶貴的內在訊息，學習解讀它，而不是壓抑或害怕它。</span>
+                    <span class="icon">💻</span>
+                    <span class="icon-text"><strong>網頁技術：</strong> 熟悉 HTML5, CSS, JavaScript 。</span>
                 </li>
                 <li>
-                    <span class="icon">🚀</span>
-                    <span class="icon-text"><strong>學習是旅程，不是競賽：</strong>每個人的步調都不同。這個計畫鼓勵自我探索，沒有標準答案，只有更認識自己的過程。</span>
+                    <span class="icon">🧠</span>
+                    <span class="icon-text"><strong>情緒智能教育：</strong> 具備情緒辨識、壓力管理、同理心溝通等相關知識。</span>
                 </li>
                 <li>
-                    <span class="icon">💖</span>
-                    <span class="icon-text"><strong>同理心是超能力：</strong>我們深信，學會同理是改善人際關係、減少衝突、建立一個更友善世界的關鍵。</span>
+                    <span class="icon">📝</span>
+                    <span class="icon-text"><strong>內容創建與溝通：</strong> 擅長將複雜概念轉化為易於理解的文字與圖表。</span>
+                </li>
+                <li>
+                    <span class="icon">🏞️</span>
+                    <span class="icon-text"><strong>興趣愛好：</strong> 戶外攝影、打籃球、閱讀科普書籍。</span>
                 </li>
             </ul>
         </article>
         
         <article class="lesson-card">
-            <h2>聯繫我們 (Contact Us)</h2>
-            <p>我們非常樂意聽到你的回饋與建議！如果你有任何問題、合作想法，或只是想分享你的學習心得，都歡迎透過以下方式聯繫我們。</p>
-            <p class="mt-4"><strong>電子郵件：</strong>keag212103@gmail.com</p>
+            <h2>聯繫方式 (Contact & Portfolio)</h2>
+            <p>如果你對我的技能、情緒教育網站或任何合作機會感興趣，歡迎隨時聯繫我！</p>
+            <p class="mt-4">
+                <strong>電子郵件：</strong><a href="mailto:keag212103@gmail.com" target="_blank">keag212103@gmail.com</a>
+            </p>
+
         </article>
     </main>
 
     <footer>
-        <p>&copy; 我的情緒，我來懂 </p>
+        <p>&copy; 2025 [盧楷傑] 個人檔案。情緒教育網站。</p>
     </footer>
 </body>
 </html>
